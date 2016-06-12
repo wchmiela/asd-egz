@@ -4,13 +4,13 @@ Podzial na kategorie. Kazde zadanie do odpowiedniej kategorii
 Sortowania, struktury, grafy, prog. dynamiczne
 
 Schemat nazywania:
-	- kol_X_20YY_20YY_[Z]
-	- egz_X_20YY_20YY_[Z]
+- kol_X_20YY_20YY_[Z]
+- egz_X_20YY_20YY_[Z]
 
 Gdzie
-	X - numer zadania
-	YY - rok
-	Z - tresc / czego dotyczy (skrotowo)	
+- X - numer zadania
+- YY - rok
+- Z - tresc / czego dotyczy (skrotowo)	
 
 //Grzegorz
 Proponuje podział:
