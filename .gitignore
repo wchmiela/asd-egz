@@ -1,5 +1,6 @@
 # Grzegórz issues
 # Moje issues musza byc na poczatku poniwaz w przciwnym wypadku psuja wasze issues
+# haha spoko ~wojtek
 *
 !*/
 !*.*
@@ -37,5 +38,11 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Clion files
+*.iml
+*.xml
+/.idea
+
 
 
