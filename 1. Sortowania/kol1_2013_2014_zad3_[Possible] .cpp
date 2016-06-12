@@ -1,3 +1,4 @@
+//https://wiki.iiet.pl/lib/exe/fetch.php?media=studia:przedmioty:asd:2013-1kolos.jpg
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
