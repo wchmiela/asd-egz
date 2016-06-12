@@ -1,0 +1,3 @@
+Opisac algorytm, ktory przyjmuje na wejsciu pewne drzewo BST T  i tworzy nowe drzewo BST T', ktore spelania nastepujace warunki
+    1. T' zawiera dokladnie te same wartosci co T
+    2. T' jest drzewem czerwono-czarnym
