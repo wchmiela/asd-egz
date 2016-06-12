@@ -5,7 +5,8 @@
 		int short_j;
 }
 Z kazdego pola mozna skakc tylko o ilosc pol zapisana w long_j lub short_j.
-Napisac program który zwróci maksymalną wartość jaką możemy osiągnąć poprzez przejscie z pola 0 do n-1. Mozna założyć ze z każdego pola da się dojsc do polna n-1.
+Napisac program który zwróci maksymalną wartość jaką możemy osiągnąć poprzez przejscie z pola 0 do n-1. 
+Mozna założyć ze z każdego pola da się dojsc do polna n-1.
 */
 #include <stdio.h>
 #include <stdlib.h>
