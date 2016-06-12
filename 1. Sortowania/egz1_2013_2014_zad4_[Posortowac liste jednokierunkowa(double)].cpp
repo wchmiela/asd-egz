@@ -1,3 +1,6 @@
+/*
+Omówić i zaimplementować funkcje sortujaca liste jednkierunkowa z danycmi typu double
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
