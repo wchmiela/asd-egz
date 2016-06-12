@@ -1,13 +1,16 @@
 # asd-egz
 
-podzial na lata i terminy
+Podzial na kategorie. Kazde zadanie do odpowiedniej kategorii
+Sortowania, struktury, grafy, prog. dynamiczne
 
-np:
-2015
-  - 1 termin
-  - 2 termin
-  - 3 termin
+Schemat nazywania:
+	- kol_X_20YY_20YY_[Z]
+	- egz_X_20YY_20YY_[Z]
 
+Gdzie
+	X - numer zadania
+	YY - rok
+	Z - tresc / czego dotyczy (skrotowo)	
 
 //Grzegorz
 Proponuje podział:
