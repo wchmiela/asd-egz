@@ -1,9 +1,3 @@
-# Grzegórz issues
-# Moje issues musza byc na poczatku poniwaz w przciwnym wypadku psuja wasze issues
-*
-!*/
-!*.*
-
 # Object files
 *.o
 *.ko
@@ -38,4 +32,7 @@
 *.dSYM/
 *.su
 
-
+# Grzegórz issues
+*
+!*/
+!*.*
