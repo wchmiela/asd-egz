@@ -1,6 +1,0 @@
-Dana jest n elementowa tablica A zawierajaca liczby naturalne.
-Powstala w dwoch krokach:
-    1. wygenerowanie losowo n roznych liczb nieparzystych i posortowano je rosnaco
-    2. wybrano losowo logn elementow  i zamieniono je na losowo wybrane liczby parzyste
-
-Opracowac algorytm sortowania takich danych. (quicksort oceniany na 0 pkt)
