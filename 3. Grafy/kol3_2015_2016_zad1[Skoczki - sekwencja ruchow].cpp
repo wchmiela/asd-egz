@@ -4,6 +4,7 @@
 using namespace std;
 
 bool prepareSequenceDFS(bool** A, int n);
+bool prepareSequenceEuler(bool** A, int n);
 
 int main(){
     int n = 6;
@@ -42,27 +43,8 @@ int pozW(int x, int i){
 }
 
 /*
-    Tutaj nalezy dodac rozwiazanie bazujace na sciezce hamiltona
-
-bool prepareSequenceEuler(bool** A, int n){
-    boot** B = new bool*[n];
-    int c = 0;
-    int poz[n][2];
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(A[i][j]){
-                poz[c][0] = i;
-                poz[c][1] = j;
-                c++;
-            }
-        }
-    }
-    for(int i = 0; i < c; i++){
-        for(int i=0)
-    }
-}
+    Tutaj mozna dodac rozwiazanie bazujace na sciezce hamiltona
 */
-
 
 /*
     Rozwiazanie bazujace na DFS
