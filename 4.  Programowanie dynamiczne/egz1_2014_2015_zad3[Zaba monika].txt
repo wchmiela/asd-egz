@@ -1,3 +1,4 @@
+https://wiki.iiet.pl/lib/exe/fetch.php?media=studia:przedmioty:asd:asd_2015_1termin_a.png
 struct stone{
     bool stone; //czy jest kamien na tej pozycji
     bool visited; //czy mozna odwiedzic
