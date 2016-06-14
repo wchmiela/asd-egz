@@ -1,3 +1,8 @@
+/*
+https://wiki.iiet.pl/lib/exe/fetch.php?media=studia:przedmioty:asd:asd_2015_1termin_a.png
+Hashmapa z funckja hashujaca, int hash(string key, int size);
+Sprawidzić hashmapa jest poprawna.
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
