@@ -13,6 +13,10 @@ struct Tree{
 	(Na potrzeby algorytmu mogą paostwo uzupełnid strukturę Tree o dalsze pola.)
 */
 
+// EDIT: to rozwiąznie jest błędne, źle zrozumiałem polecenie
+// rozwiązanie odpowiada na pytanie jaka jest długość ścieżki między konkretnymi więzłami
+// jeśli na wejściu dostaniemy wierzchołki u i v, i wskaźnik na korzeń
+
 // (1) Należy dodać do struktury pole sum i policzyć koszty dojścia z roota
 struct Tree{
 	Tree *parent; 
