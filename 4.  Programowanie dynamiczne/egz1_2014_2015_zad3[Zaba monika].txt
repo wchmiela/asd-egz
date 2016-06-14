@@ -1,0 +1,41 @@
+struct stone{
+    bool stone; //czy jest kamien na tej pozycji
+    bool visited; //czy mozna odwiedzic
+    //liczba > 0 najmniejszy ilosc skokow potrzebnych do wykonania aby dotrzec na kamien (Xn, Yn)
+    //liczba == -1 z tego kamienia nie da sie doskoczyc tym rodzajem skoku na kamien (Xn, Yn);
+    int bestJump;
+    int bestShortJump;
+    bool visited;
+};
+
+int normalJump{
+    - jezeli w tablicy ktora przechowuje dla kazdego kamienia strukture stone jest obliczony bestJump zwroc go
+    - jezeli (x,y)=(Xn, Yn) zwroc 0;
+    - zaznacz vistied na true; aby nie zapetlic sie
+    - znajdz kamienie w odleglosci od (0 do L]
+        dla kazdego znalezionego
+            jezeli nie sa zaznaczone visited wywolaj na nich normalJump. Wynik jezeli jest nizszy od dotychczasowego zapisz do zmiennej smallestAmmountOfJumps
+            wpp. idz dalej
+
+    - znajdz kamienie w odleglosci od (L; 2L]
+        dla kazdego znalezionego
+            jezeli nie sa zaznaczone visited wywolaj na nich shortJump. Wynik jezeli jest nizszy od dotychczasowego zapisz do zmiennej smallestAmmountOfJumps
+            wpp. idz dalej
+        zapisz do bestJump najlepszy wynik z smallestAmountOfJumps lub -1 jezeli nie da sie dotrzec do kamienia koncowego
+    - ustaw visited na false;
+    - zwroc wynik z smallestAmountOfJumps lub -1 jezeli nie da sie dotrzec do kamienia koncowego
+}
+
+
+int shortJump{
+    - jezeli w tablicy ktora przechowuje dla kazdego kamienia strukture stone jest obliczony bestShortJump zwroc go
+    - jezeli (x,y)=(Xn, Yn) zwroc 0;
+    - zaznacz vistied na true; aby nie zapetlic sie
+    - znajdz kamienie w odleglosci od (0 do L/2]
+        dla kazdego znalezionego
+            jezeli nie sa zaznaczone visited wywolaj na nich normalJump. Wynik jezeli jest nizszy od dotychczasowego zapisz do zmiennej smallestAmmountOfJumps
+            wpp. idz dalej
+        zapisz do bestShortJump najlepszy wynik z smallestAmountOfJumps lub -1 jezeli nie da sie dotrzec do kamienia koncowego
+    - ustaw visited na false;
+    - zwroc wynik z smallestAmountOfJumps lub -1 jezeli nie da sie dotrzec do kamienia koncowego
+}
