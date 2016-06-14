@@ -1,0 +1,22 @@
+Tablica A, n elementowa zawierajaca dane typu:
+struct Interval { int x,y; };
+
+Elementy tablicy A opisuja przedzialy otwarte. Dana jest liczba t. Wypisz t lub mniej przedzialow ktorych suma daje spojny przedzial o maksymalnej dlugosci.
+
+Dwie tablice maski w ktorych beda indeksy tablicy A tak ustawione by:
+    w tablicy B odcinki byly ustawione rosnaco wzgledem poczatku
+    w tablicy C odcinki byly ustwione malejaco wzgledem konca
+
+int max_val, int max_ind, curr_ind, curr_val;
+
+1. Wybieram odcinek A[B[curr_ind]], i to jest moj odcinek to ktorego bede dolaczal odcinki. I ustawiam curr_val na dlugosc tego odcinka
+Teraz szukam te ktore zaczelynaja sie przed koncem mojego ocinka i wybieram ten ktory sie najdalej konczy,
+dodaje do curr_val dlugosc o ktora sie powiekszym odcinek.
+Dzialam az osiagne t(ilosc dodanych odcinkow):
+    - jezeli curr_val>max_val to uaktualnij max_val i max_ind
+    - uruchamiam punkt z zwiekszanym indeksem.
+Jezeli nie osiagnalem t ilosci dodanych odcinkow to znaczy ze zaden odcinek nie zachodzi na koniec mojego odcinka
+i wtedy szuakam najwczesniej zaczynajacego sie odcinka ktory nie zachodzi na moj odcinek i ide do punktu 1.
+
+Wypisuje t lub mniej odcinkow zaczynajac od max_ind dzialam zachlannie.
+
