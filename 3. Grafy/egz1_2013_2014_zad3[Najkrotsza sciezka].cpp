@@ -1,3 +1,10 @@
+/*
+Dostajemy graf w postaci listy sasiedztwa, oraz dwa wierzcholki.
+Znalesc najkrotsza sciezkie z wierzcholka s do t.
+Dodatkowa informacja, wagi krawedzi sa o rozwiarze maksymalnie loglogV, gdzie V ilosc wierzcholkow w grafie
+https://wiki.iiet.pl/lib/exe/fetch.php?media=studia:przedmioty:asd:egzamin_grb_2013_2014.jpg
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <queue>
