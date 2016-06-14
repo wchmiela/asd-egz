@@ -1,0 +1,70 @@
+//Dana jest następująca struktura opisująca drzewo:
+struct Tree{
+	Tree *parent; //rodzic, lub NULL jeśli to korzeń
+	Tree *left, *right; //lewe I prawe dziecko
+	int w_left, w_right; //wagi krawędzi do lewego i do prawego dziecka (dodatnie)
+}
+
+/*
+	Proszę opisad (bez implementacji) możliwie jak najszybszy algorytm, 
+	ktory mając na wejściu drzewo opisane przez strukturą Tree znajduje długośd najdłuższej 
+	ścieżki między dwoma węzłami drzewa (prosta ścieżka to taka, 
+	która nie odwiedza żadnego węzła więcej niż raz). 
+	(Na potrzeby algorytmu mogą paostwo uzupełnid strukturę Tree o dalsze pola.)
+*/
+
+// (1) Należy dodać do struktury pole sum i policzyć koszty dojścia z roota
+struct Tree{
+	Tree *parent; 
+	Tree *left, *right; 
+	int w_left, w_right;
+	int sum;	
+}
+
+void BFS(Tree * r) {
+	queue< * Tree > Q;
+	Q.push(r);
+	r->sum = 0;
+	
+	while(!Q.empty()) {
+		Tree * t = Q.front(); Q.pop();
+		
+		if(t->up != NULL) {
+			if(t = t->up->left)
+				t->sum = t->up->w_left + t->up->sum;
+			else 
+				t->sum = t->up->w_right + t->up->sum;
+		}
+		if(t->left != NULL) Q.push(t->left);
+		if(t->right != NULL) Q.push(t->right);
+	}
+}
+
+// (2) Wystarczy napisać  program zwracający długość najdłuższej ściezki między u i v
+// nasza struktura to poprostu drzewo binarne, samo to, że mamy drzewo mówi nam, że istneje tylko jedna
+// ścieżka między u i v, zatem wystarczy policzyć długość tej jedynej ścieżki
+
+// potrzebujemy jeszcze jednego pola
+struct Tree{
+	Tree *parent; 
+	Tree *left, *right; 
+	int w_left, w_right;
+	int sum;
+	int color; // 0 niepokolorowany, 1 pokolorowany	
+}
+
+// domyślnie każdy węzeł jest niepokolorowany
+int len(Tree * u, Tree * v) {
+	Tree * a = u, * b = v;
+	while(a != NULL) {
+		a->color = 1;
+		a = a->up;
+	}
+	while(b != NULL && b->color == 0) { // znajdujemy punkt przecięcia
+		b = b->up;
+	}
+	
+	return (u->sum+v->sum)-(b->sum*2);
+}
+
+// Algorytm będzie miał złożoność O(V + V) = O(V) - zł. linowa względem ilości wierzchołków
