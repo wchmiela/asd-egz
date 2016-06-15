@@ -7,7 +7,8 @@ bool prepareSequenceDFS(bool** A, int n);
 bool prepareSequenceEuler(bool** A, int n);
 
 int main(){
-    int n = 6;
+    int n ;
+    scanf("%d", &n);
     bool** A = new bool*[n];
     bool** B = new bool*[n];
     for(int i = 0; i < n; i++){
@@ -18,10 +19,10 @@ int main(){
         }
     }
     A[0][1] = B[0][1] = true;
-    A[3][1] = B[3][1] = true;
+    //A[3][1] = B[3][1] = true;
     A[5][0] = B[5][0] = true;
     A[5][2] = B[5][2] = true;
-    A[1][3] = B[1][3] = true;
+   // A[1][3] = B[1][3] = true;
     A[2][5] = B[2][5] = true;
     A[4][4] = true;//B przypadek gdy nie ma sekwenji ruchow
     if(prepareSequenceDFS(A, n)) printf("Znalazlem\n"); else printf("Nie znalazlem\n");
@@ -69,13 +70,21 @@ bool sequenceDFS(bool** A, int n, int w, int k, int c){
 
 bool prepareSequenceDFS(bool** A, int n){
     int c = 0;
-    int poz[n][2];
+    int d = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             if(A[i][j]){
-                poz[c][0] = i;
-                poz[c][1] = j;
                 c++;
+            }
+        }
+    }
+    int poz[c][2];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(A[i][j]){
+                poz[d][0] = i;
+                poz[d][1] = j;
+                d++;
             }
         }
     }
