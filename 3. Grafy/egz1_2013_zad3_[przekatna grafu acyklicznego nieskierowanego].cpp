@@ -30,48 +30,6 @@ struct Vertex {
 	int visited;
 };
 
-// To jest zwyk³y BFS tylko najpierw znajdujê wierzcho³ek, który ma stopieñ 1
-// potem ju¿ znajdujê wyskoœæ drzewa, 
-// poniewa¿ nasz graf to w³aœnie drzewo z krawêdziami nieskierowanymi
-int diagonal(Vertex * g, int n) {
-	int * wch = new int[n];
-	for (int i = 0; i < n; i++) 
-		for (int j = 0; j < g[i].edge; j++) 
-			wch[g[i].edges[j]]++;
-	int s = 0;
-	for (int i = 0; i < n; i++)
-		if (wch[i] == 1) { s = i; break; }
-	delete [] wch;
-	
-	for (int i = 0; i < n; i++) {
-		g[i].d = 0;
-		g[i].visited = false;
-	}
-	queue< int > Q;
-	g[s].visited = true;
-	Q.push(s);
-
-	while (!Q.empty()) {
-		int v = Q.front(); Q.pop();
-
-		for (int i = 0; i < g[v].edge; i++) {
-			int u = g[v].edges[i];
-			if (!g[u].visited) {
-				g[u].visited = true;
-				g[u].d = g[v].d + 1;
-				
-				Q.push(u);
-			}
-		}
-	}
-
-	int max_d = g[0].d;
-	for (int i = 1; i < n; i++)
-		if (g[i].d > max_d) max_d = g[i].d;
-
-	return max_d;
-}
-
 Vertex * makeTable(int g[V_SIZE][V_SIZE], int n) {
 	Vertex * nV = new Vertex[n];
 
@@ -95,9 +53,50 @@ Vertex * makeTable(int g[V_SIZE][V_SIZE], int n) {
 	return nV;
 }
 
+void DFS(Vertex * A, int v) {
+	A[v].visited = true;
+
+	for (int j = 0; j < A[v].edge; j++) {
+		int u = A[v].edges[j];
+		if (!A[u].visited) {
+			A[u].d += A[v].d + 1;
+			DFS(A, u);
+		}
+	}
+
+}
+
+int getMax(Vertex * A, int n) {
+	int max = 0;
+	for (int i = 1; i < n; i++)
+		if (A[i].d > A[max].d) max = i;
+	return max;
+}
+
+void reset(Vertex * A, int n) {
+	for (int i = 0; i < n; i++) {
+		A[i].d = 0;
+		A[i].visited = false;
+	}
+}
+
+int diagonal2(Vertex * A, int n) {
+	reset(A, n);
+
+	DFS(A, 2);
+	
+	int u = getMax(A, n);
+	reset(A, n);
+
+	DFS(A, u);
+	int v = getMax(A, n);
+
+	return A[v].d;
+}
+
 int main() {
 	Vertex * A = makeTable(graph, V_SIZE);
-	cout << diagonal(A, V_SIZE) << endl; 
+	cout << diagonal2(A, V_SIZE) << endl;
 
 	system("pause");
 	return 0;
