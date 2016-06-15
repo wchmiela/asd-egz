@@ -33,10 +33,10 @@ struct Vertex {
 // To jest zwyk³y BFS tylko najpierw znajdujê wierzcho³ek, który ma stopieñ 1
 // potem ju¿ znajdujê wyskoœæ drzewa, 
 // poniewa¿ nasz graf to w³aœnie drzewo z krawêdziami nieskierowanymi
-int radius(Vertex * g, int n) {
+int diagonal(Vertex * g, int n) {
 	int * wch = new int[n];
 	for (int i = 0; i < n; i++) 
-		for (int j = 0; j < g[i].edge; i++) 
+		for (int j = 0; j < g[i].edge; j++) 
 			wch[g[i].edges[j]]++;
 	int s = 0;
 	for (int i = 0; i < n; i++)
@@ -97,7 +97,7 @@ Vertex * makeTable(int g[V_SIZE][V_SIZE], int n) {
 
 int main() {
 	Vertex * A = makeTable(graph, V_SIZE);
-	cout << radius(A, V_SIZE) << endl; 
+	cout << diagonal(A, V_SIZE) << endl; 
 
 	system("pause");
 	return 0;
